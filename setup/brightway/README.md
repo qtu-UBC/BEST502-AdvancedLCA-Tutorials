@@ -8,7 +8,7 @@ This repository supports your learning of Life Cycle Assessment (LCA) using the 
 
 Before using the tutorials, you must install the required environment. Do this **only once**.
 
-▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/hub/user-redirect/git-pull?repo=YOUR_GITHUB_USERNAME/your-course-repo&branch=main&subPath=setup/brightway_setup.ipynb)
+▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/hub/user-redirect/git-pull?repo=qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/setup/brightway/brightway_setup.ipynb)
 
 It will:
 - Create a Conda environment called `brightway25`
