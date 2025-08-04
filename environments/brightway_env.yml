@@ -1,0 +1,21 @@
+name: brightway25
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - pip:
+      - brightway25
+      - bw2io
+      - bw2data
+      - bw2calc
+      - bw_processing
+      - bw_graph_tools
+      - brightway2-regional
+      - pint
