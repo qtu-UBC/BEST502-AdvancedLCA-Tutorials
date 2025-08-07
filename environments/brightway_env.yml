@@ -1,9 +1,10 @@
+# the following content is adopted from https://raw.githubusercontent.com/brightway-lca/brightway-book/refs/heads/main/content/chapters/BW25/_environment/env_bw25.yml
 name: brightway25
 channels:
   - conda-forge
-  - defaults
+  - cmutel
 dependencies:
-  - python=3.10
+  - python=3.11
   - pip
   - numpy
   - pandas
@@ -11,11 +12,10 @@ dependencies:
   - matplotlib
   - seaborn
   - pip:
-      - brightway25
-      - bw2io
-      - bw2data
-      - bw2calc
-      - bw_processing
-      - bw_graph_tools
-      - brightway2-regional
-      - pint
+    - bw2io=0.9.dev38 # https://anaconda.org/cmutel/bw2io/files
+    - bw2calc=2.0.dev22 # https://anaconda.org/cmutel/bw2calc/files
+    - bw2data=4.0.dev56 # https://anaconda.org/cmutel/bw2data/files
+    - bw2analyzer=0.11.7 # https://anaconda.org/cmutel/bw2analyzer/files
+    - stats_arrays=0.7 # https://anaconda.org/conda-forge/stats_arrays/files
+    - ecoinvent_interface=2.4.1 # https://anaconda.org/cmutel/ecoinvent_interface/files
+    - pint
