@@ -11,12 +11,12 @@ They cover step-by-step use of Brightway for Life Cycle Assessment (LCA), includ
 
 Click a link below to launch the tutorial in your Jupyter Open environment. Make sure you have completed the **Brightway environment setup** first.
 
-| Tutorial | Description | Launch Link |
-|----------|-------------|-------------|
-| 1 - The supply chain graph.ipynb [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=1%20-%20The%20supply%20chain%20graph.ipynb) |
-| 2 - Importing data.ipynb [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=2%20-%20Importing%20data.ipynb) |
-| 3 - Building and using matrices in bw2calc.ipynb [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=3%20-%20Building%20and%20using%20matrices%20in%20bw2calc.ipynb) |
-| 4 - Interpretation.ipynb [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=4%20-%20Interpretation.ipynb) |
+| Tutorial | Launch Link |
+|----------|-------------|
+| 1 - The supply chain graph.ipynb | [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=1%20-%20The%20supply%20chain%20graph.ipynb) |
+| 2 - Importing data.ipynb | [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=2%20-%20Importing%20data.ipynb) |
+| 3 - Building and using matrices in bw2calc.ipynb | [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=3%20-%20Building%20and%20using%20matrices%20in%20bw2calc.ipynb) |
+| 4 - Interpretation.ipynb | [Launch in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/brightway-lca/from-the-ground-up&branch=main&subPath=4%20-%20Interpretation.ipynb) |
 
 
 ---
