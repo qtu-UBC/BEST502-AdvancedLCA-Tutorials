@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWP Carbon Storage Simulator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray */
+        }
+        .container {
+            max-width: 1000px;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="container mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10 border border-gray-200">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8">
+            🌿 HWP Carbon Storage Simulator 🌳
+        </h1>
+
+        <p class="text-gray-700 mb-6 text-center">
+            Explore the long-term carbon storage in harvested wood products (HWPs) and how recycling impacts it, based on principles from ISO 13391.
+        </p>
+
+        <!-- Product Volume Inputs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Sawn Wood Input -->
+            <div class="bg-blue-50 p-4 rounded-lg shadow-sm">
+                <label for="sawnWoodVolume" class="block text-lg font-medium text-gray-800 mb-2">
+                    Sawn Wood Volume ($m^3$)
+                </label>
+                <input type="number" id="sawnWoodVolume" value="1000" min="0" step="100"
+                       class="w-full p-3 border border-blue-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Wood-based Panels Input -->
+            <div class="bg-green-50 p-4 rounded-lg shadow-sm">
+                <label for="panelsVolume" class="block text-lg font-medium text-gray-800 mb-2">
+                    Wood-based Panels Volume ($m^3$)
+                </label>
+                <input type="number" id="panelsVolume" value="500" min="0" step="50"
+                       class="w-full p-3 border border-green-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Fibre/Paper Input -->
+            <div class="bg-yellow-50 p-4 rounded-lg shadow-sm">
+                <label for="fibrePaperVolume" class="block text-lg font-medium text-gray-800 mb-2">
+                    Fibre/Paper Volume (tonnes)
+                </label>
+                <input type="number" id="fibrePaperVolume" value="200" min="0" step="20"
+                       class="w-full p-3 border border-yellow-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150 ease-in-out">
+            </div>
+        </div>
+
+        <!-- Assumptions Section -->
+        <h2 class="text-2xl md:text-2xl font-semibold text-center text-gray-800 mb-4">
+            Assumptions & Parameters
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Carbon Fraction Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="carbonFraction" class="block text-lg font-medium text-gray-800 mb-2">
+                    Carbon Fraction ($C_f$, default 0.5)
+                </label>
+                <input type="number" id="carbonFraction" value="0.5" min="0.1" max="1.0" step="0.01"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Sawn Wood Half-life Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="halfLifeSawnWood" class="block text-lg font-medium text-gray-800 mb-2">
+                    Sawn Wood Half-life (years, default 35)
+                </label>
+                <input type="number" id="halfLifeSawnWood" value="35" min="1" step="1"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Wood-based Panels Half-life Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="halfLifePanels" class="block text-lg font-medium text-gray-800 mb-2">
+                    Panels Half-life (years, default 25)
+                </label>
+                <input type="number" id="halfLifePanels" value="25" min="1" step="1"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Fibre/Paper Half-life Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="halfLifeFibrePaper" class="block text-lg font-medium text-gray-800 mb-2">
+                    Fibre/Paper Half-life (years, default 2)
+                </label>
+                <input type="number" id="halfLifeFibrePaper" value="2" min="1" step="1"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+
+             <!-- Sawn Wood Density Input -->
+             <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="densitySawnWood" class="block text-lg font-medium text-gray-800 mb-2">
+                    Sawn Wood Density ($kg/m^3$, default 500)
+                </label>
+                <input type="number" id="densitySawnWood" value="500" min="100" max="1000" step="10"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Panels Density Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="densityPanels" class="block text-lg font-medium text-gray-800 mb-2">
+                    Panels Density ($kg/m^3$, default 650)
+                </label>
+                <input type="number" id="densityPanels" value="650" min="100" max="1000" step="10"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Fibre/Paper Density Input -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <label for="densityFibrePaper" class="block text-lg font-medium text-gray-800 mb-2">
+                    Fibre/Paper Density ($kg/tonne$, default 1000)
+                </label>
+                <input type="number" id="densityFibrePaper" value="1000" min="500" max="2000" step="50"
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500 transition duration-150 ease-in-out">
+            </div>
+
+            <!-- Recycling Rate Slider -->
+            <div class="bg-purple-50 p-4 rounded-lg shadow-sm">
+                <label for="recyclingRate" class="block text-lg font-medium text-gray-800 mb-2">
+                    Fibre/Paper Recycling Rate (<span id="recyclingRateValue">30</span>%)
+                </label>
+                <input type="range" id="recyclingRate" value="30" min="0" max="90" step="10"
+                       class="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer range-lg focus:outline-none focus:ring-purple-500 focus:ring-2">
+            </div>
+        </div>
+
+
+        <button id="calculateBtn"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition transform hover:scale-105 duration-200 ease-in-out mb-8">
+            Calculate Carbon Storage
+        </button>
+
+        <div id="results" class="space-y-4 mb-10">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-4">Results</h2>
+            <div class="bg-indigo-100 p-4 rounded-lg shadow-md flex justify-between items-center">
+                <span class="text-xl font-medium text-gray-900">Initial Total Biogenic Carbon:</span>
+                <span id="initialCarbon" class="text-2xl font-bold text-indigo-700">0.00 $tCO_2e$</span>
+            </div>
+            <div class="bg-pink-100 p-4 rounded-lg shadow-md flex justify-between items-center">
+                <span class="text-xl font-medium text-gray-900">Net HWP Contribution (Current Period):</span>
+                <span id="hwpContribution" class="text-2xl font-bold text-pink-700">0.00 $tCO_2e$</span>
+            </div>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-4">
+            Carbon Storage Over 100 Years
+        </h2>
+        <div class="relative bg-gray-50 rounded-lg p-4 md:p-6 shadow-inner border border-gray-200">
+            <canvas id="carbonChart"></canvas>
+            <div id="loadingIndicator" class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 rounded-lg z-10 hidden">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                <span class="ml-4 text-blue-700 text-lg">Calculating...</span>
+            </div>
+        </div>
+
+        <p class="text-sm text-gray-600 mt-8 text-center">
+            *This simulation demonstrates the decay of the initial carbon stock. It does not account for new products entering the HWP pool after the initial batch.
+            Default values for Carbon Fraction (0.5), $CO_2$ to Carbon Ratio (44/12), Densities (Sawn Wood ~500 $kg/m^3$, Wood-based Panels ~650 $kg/m^3$, Fibre/Paper ~1000 $kg/tonne$), and Half-lives (Sawn Wood ~35 years, Panels ~25 years, Fibre/Paper ~2 years) are based on ISO 13391 guidelines.
+        </p>
+
+    </div>
+
+    <script>
+        // Constants from ISO 13391-1:2024
+        const CO2_TO_C_RATIO = 44 / 12; // Molecular weight ratio of CO2/C - FIXED
+
+        // Default HWP Coefficients (Tier 1) from Table 1, ISO 13391-1
+        const HWP_COEFFICIENTS = {
+            'sawnWood': 0.3,
+            'panels': 0.2,
+            'fibrePaper': { // Adjusted based on recycling rate (Table 2)
+                0: 0.03,
+                30: 0.05,
+                50: 0.06,
+                70: 0.10,
+                90: 0.25
+            }
+        };
+
+        // DOM Elements for Volumes
+        const sawnWoodVolumeInput = document.getElementById('sawnWoodVolume');
+        const panelsVolumeInput = document.getElementById('panelsVolume');
+        const fibrePaperVolumeInput = document.getElementById('fibrePaperVolume');
+
+        // DOM Elements for Assumptions
+        const carbonFractionInput = document.getElementById('carbonFraction');
+        const densitySawnWoodInput = document.getElementById('densitySawnWood');
+        const densityPanelsInput = document.getElementById('densityPanels');
+        const densityFibrePaperInput = document.getElementById('densityFibrePaper');
+        const halfLifeSawnWoodInput = document.getElementById('halfLifeSawnWood');
+        const halfLifePanelsInput = document.getElementById('halfLifePanels');
+        const halfLifeFibrePaperInput = document.getElementById('halfLifeFibrePaper');
+
+        const recyclingRateInput = document.getElementById('recyclingRate');
+        const recyclingRateValueSpan = document.getElementById('recyclingRateValue');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const initialCarbonSpan = document.getElementById('initialCarbon');
+        const hwpContributionSpan = document.getElementById('hwpContribution');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const carbonChartCanvas = document.getElementById('carbonChart');
+
+        let carbonChart; // Chart.js instance
+
+        // Function to convert volume/mass to oven-dry weight (kg)
+        function toOvenDryWeight(volume, productType) {
+            let density;
+            switch (productType) {
+                case 'sawnWood':
+                    density = parseFloat(densitySawnWoodInput.value) || 0;
+                    return volume * density;
+                case 'panels':
+                    density = parseFloat(densityPanelsInput.value) || 0;
+                    return volume * density;
+                case 'fibrePaper':
+                    density = parseFloat(densityFibrePaperInput.value) || 0;
+                    return volume * density; // Already in tonnes, converting to kg implicitly by 1000kg/tonne
+                default:
+                    return 0;
+            }
+        }
+
+        // Function to calculate Biogenic Carbon (BC_CO2) in tCO2e
+        function calculateBiogenicCarbon(ovenDryWeightKg) {
+            const carbonFraction = parseFloat(carbonFractionInput.value) || 0;
+
+            // Formula 1 from ISO 13391-1: BC_CO2 = (44/12) * Cf * OvenDryWt
+            // OvenDryWt should be in tonnes for tCO2e output
+            const ovenDryWeightTonnes = ovenDryWeightKg / 1000;
+            return ovenDryWeightTonnes * carbonFraction * CO2_TO_C_RATIO;
+        }
+
+        // Function to get Fibre/Paper HWP coefficient based on recycling rate
+        function getFibrePaperHWPCoefficient(rate) {
+            const rates = Object.keys(HWP_COEFFICIENTS.fibrePaper).map(Number).sort((a, b) => a - b);
+            let closestRate = rates[0];
+            for (let i = 0; i < rates.length; i++) {
+                if (rate >= rates[i]) {
+                    closestRate = rates[i];
+                } else {
+                    break;
+                }
+            }
+            return HWP_COEFFICIENTS.fibrePaper[closestRate];
+        }
+
+        // Function to simulate carbon decay over time using user-defined half-lives
+        function simulateDecay(initialCarbon, halfLife, years) {
+            const data = [];
+            for (let year = 0; year <= years; year++) {
+                const remainingCarbon = initialCarbon * Math.pow(0.5, year / halfLife);
+                data.push(remainingCarbon);
+            }
+            return data;
+        }
+
+        // Main calculation and chart update function
+        function updateSimulation() {
+            loadingIndicator.classList.remove('hidden');
+
+            // Using a setTimeout to allow the loading indicator to render before heavy computation
+            setTimeout(() => {
+                const sawnWoodVol = parseFloat(sawnWoodVolumeInput.value) || 0;
+                const panelsVol = parseFloat(panelsVolumeInput.value) || 0;
+                const fibrePaperVol = parseFloat(fibrePaperVolumeInput.value) || 0;
+                const recyclingRate = parseInt(recyclingRateInput.value) || 0;
+
+                // Get user-defined half-lives
+                const userHalfLives = {
+                    'sawnWood': parseFloat(halfLifeSawnWoodInput.value) || 35,
+                    'panels': parseFloat(halfLifePanelsInput.value) || 25,
+                    'fibrePaper': parseFloat(halfLifeFibrePaperInput.value) || 2
+                };
+
+                // 1. Calculate Initial Biogenic Carbon for each product (in tCO2e)
+                const bcSawnWood = calculateBiogenicCarbon(toOvenDryWeight(sawnWoodVol, 'sawnWood'));
+                const bcPanels = calculateBiogenicCarbon(toOvenDryWeight(panelsVol, 'panels'));
+                const bcFibrePaper = calculateBiogenicCarbon(toOvenDryWeight(fibrePaperVol, 'fibrePaper'));
+                const totalInitialBiogenicCarbon = bcSawnWood + bcPanels + bcFibrePaper;
+
+                initialCarbonSpan.textContent = `${totalInitialBiogenicCarbon.toFixed(2)} tCO₂e`;
+
+                // 2. Calculate Net HWP Contribution (Current Period)
+                const hwpCoeffFibrePaper = getFibrePaperHWPCoefficient(recyclingRate);
+
+                const netHwpSawnWood = bcSawnWood * HWP_COEFFICIENTS.sawnWood;
+                const netHwpPanels = bcPanels * HWP_COEFFICIENTS.panels;
+                const netHwpFibrePaper = bcFibrePaper * hwpCoeffFibrePaper;
+                const totalNetHwpContribution = netHwpSawnWood + netHwpPanels + netHwpFibrePaper;
+
+                hwpContributionSpan.textContent = `${totalNetHwpContribution.toFixed(2)} tCO₂e`;
+
+                // 3. Simulate Carbon Storage Over 100 Years
+                const yearsToSimulate = 100;
+                const labels = Array.from({ length: yearsToSimulate + 1 }, (_, i) => i);
+
+                const decaySawnWood = simulateDecay(bcSawnWood, userHalfLives.sawnWood, yearsToSimulate);
+                const decayPanels = simulateDecay(bcPanels, userHalfLives.panels, yearsToSimulate);
+                const decayFibrePaper = simulateDecay(bcFibrePaper, userHalfLives.fibrePaper, yearsToSimulate);
+
+                const totalDecay = labels.map((_, i) =>
+                    decaySawnWood[i] + decayPanels[i] + decayFibrePaper[i]
+                );
+
+                const datasets = [
+                    {
+                        label: 'Sawn Wood',
+                        data: decaySawnWood,
+                        borderColor: 'rgb(59, 130, 246)', // Tailwind blue-500
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        fill: false,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Wood-based Panels',
+                        data: decayPanels,
+                        borderColor: 'rgb(34, 197, 94)', // Tailwind green-500
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                        fill: false,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Fibre/Paper',
+                        data: decayFibrePaper,
+                        borderColor: 'rgb(234, 179, 8)', // Tailwind yellow-500
+                        backgroundColor: 'rgba(234, 179, 8, 0.2)',
+                        fill: false,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Total HWP Carbon',
+                        data: totalDecay,
+                        borderColor: 'rgb(109, 40, 217)', // Tailwind violet-700
+                        backgroundColor: 'rgba(109, 40, 217, 0.2)',
+                        fill: false,
+                        tension: 0.1,
+                        borderWidth: 3
+                    }
+                ];
+
+                if (carbonChart) {
+                    carbonChart.data.labels = labels;
+                    carbonChart.data.datasets = datasets;
+                    carbonChart.update();
+                } else {
+                    carbonChart = new Chart(carbonChartCanvas, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: datasets
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                title: {
+                                    display: false,
+                                    text: 'Carbon Storage Over 100 Years'
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Years'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Stored Carbon (tCO₂e)'
+                                    },
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+                loadingIndicator.classList.add('hidden');
+            }, 50); // Small delay to show loading indicator
+        }
+
+        // Event Listeners
+        calculateBtn.addEventListener('click', updateSimulation);
+        recyclingRateInput.addEventListener('input', () => {
+            recyclingRateValueSpan.textContent = recyclingRateInput.value;
+        });
+
+        // Add event listeners for new assumption inputs
+        carbonFractionInput.addEventListener('input', updateSimulation);
+        densitySawnWoodInput.addEventListener('input', updateSimulation);
+        densityPanelsInput.addEventListener('input', updateSimulation);
+        densityFibrePaperInput.addEventListener('input', updateSimulation);
+        halfLifeSawnWoodInput.addEventListener('input', updateSimulation);
+        halfLifePanelsInput.addEventListener('input', updateSimulation);
+        halfLifeFibrePaperInput.addEventListener('input', updateSimulation);
+
+
+        // Initial simulation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            carbonChartCanvas.style.height = '400px'; // Set a default height for the canvas
+            updateSimulation();
+        });
+    </script>
+</body>
+</html>
