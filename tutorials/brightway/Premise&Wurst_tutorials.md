@@ -11,7 +11,7 @@ They cover **prospective Life Cycle Assessment (pLCA)** methods, focusing on mod
 
 Click a link below to launch the tutorial in your Jupyter Open environment. Make sure you have completed the **Brightway environment setup** first.The example data is based on ecoinvent. Please confirm that your selected project name includes ecoinvent already installed.
 
-| Tutorial | Learning outcome | Original Link | Run Environment | 
+| Tutorial | Learning Outcome | Original Link | Run Environment | 
 |----------|------------------|-------------|---------------|
 | 1 - Database modification.ipynb | Learn how to use Wurst to access, inspect, and modify datasets in ecoinvent databases. | [Link](https://github.com/romainsacchi/autumn-school-dds-psi-2024/blob/main/tutorials/wurst/1%20-%20Database%20modification.ipynb) | Local (Anaconda/Jupyter) | 
 | 2 - Generate prospective LCA databases.ipynb | Understand how Premise integrates IAM scenarios with ecoinvent, and generate future-oriented LCI databases. | [Link](https://github.com/romainsacchi/autumn-school-dds-psi-2024/blob/main/tutorials/premise/1%20-%20Generate%20prospective%20LCA%20databases.ipynb) | Local (Anaconda/Jupyter) |
