@@ -27,7 +27,7 @@ Before or alongside the tutorials, the following resources will help you better 
 
 - [“Learn Brightway” Book](https://learn.brightway.dev/en/latest/content/home.html) – A practical, hands-on guide to understanding and applying Brightway.
 - [Official API reference for Brightway](https://docs.brightway.dev/en/latest/content/api) – API reference documentation of Brightway.
-- [Cheat sheet for Brightway 2.5](https://docs.brightway.dev/en/latest/content/overview/inventory.html?utm_source=chatgpt.com) – A basic list of all common Brightway commands.
+- [Cheat sheet for Brightway 2.5](https://docs.brightway.dev/en/latest/content/cheatsheet/index.html) – A basic list of all common Brightway commands.
 - [Introduction to Brightway25](https://github.com/brightway-lca/brightway-book/blob/main/content/chapters/BW25/BW25_introduction.ipynb) – A case study demonstrating LCA calculations in Brightway25.
 - [Introduction to Brightway inventory data](https://docs.brightway.dev/en/latest/content/overview/inventory.html?utm_source=chatgpt.com) – Introduction to the Brightway graph data schema (for tutorial 1).
 - [Brightway Backwards](https://chris.mutel.org/brightway-from-the-bottom-up.html) – A post that explores Brightway backwards, starting from the mathematical foundations of matrix-based LCA and to the data entry and storage steps (for tutorial 3).
