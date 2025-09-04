@@ -32,7 +32,7 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
    - Provide high-level details such as the identification of the fuel production facility, description of the fuel pathway, the type of fuel(s) produced (e.g., bioethanol), and the reporting period.  
 
 3. **LCA modeling**  
-   - Download the [Bioethanol inventory data](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Bioethanol%20inventory%20data.xlsx) 
+   - Download the [Bioethanol inventory data](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Bioethanol%20inventory%20data.xlsx).
    - Use the inventory data and the training slides to model the each stage in openLCA, as shown below:
 
 | Process Stage                | Description                                      | Slide Reference |
@@ -50,14 +50,15 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
    - Record CI results and analyze contributions by process.  
 
 7. **Export the Fuel Pathway**  
-   - Export the completed fuel pathway (JSON-LD format) - Slides p. 62.  
+   - Export the completed fuel pathway (JSON-LD format) - Slides p. 62.
+   - An example result file is here: 'Conventional Bioethanol Example_openLCA_Nov2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).  
 
 **Reference materials**:
 - [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4) - An official guidance document to help users correctly apply the Fuel LCA Model.
 
 ---
 
-## ✅ Learning Outcomes
+## 🎯 Learning Outcomes
 
 By the end of this tutorial, students will:  
 - Navigate and build models in **openLCA**.  
