@@ -4,7 +4,9 @@ The Government of Canada’s Fuel Life Cycle Assessment (LCA) Model is a tool th
 
 **Note**: These tutorial is developed by the [Minister of Environment and Climate Change Canada (2024)](https://www.canada.ca/en/environment-climate-change.html). For the latest updates and documentation, visit the [website](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model.html).
 
+
 ---
+
 
 ## 📺 Step 1: Introductory Videos on openLCA  
 
@@ -45,7 +47,7 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
 
 6. **Calculate Carbon Intensity (CI)**  
    - Create product systems for bioethanol from each feedstock (corn and wheat) - Slide p. 53-61.  
-   - Ensure reference flow is set to **F1 MJ**.  
+   - Ensure reference flow is set to **1 MJ**.  
    - Run the calculation using the **FuelLCAModelLCIA_AR5 method**.  
    - Record CI results and analyze contributions by process.  
 
