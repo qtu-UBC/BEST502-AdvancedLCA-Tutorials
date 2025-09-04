@@ -1,6 +1,8 @@
 # ⛽ Fuel Life Cycle Assessment (LCA) Model Tutorial
 
-The Government of Canada’s Fuel Life Cycle Assessment (LCA) Model is a tool that allows users to calculate the life cycle carbon intensity (CI) of fuels and energy sources produced and used in Canada. This tutorial is designed to guide students through the basics of conducting a Fuel Life Cycle Assessment (LCA) in openLCA, using bioethanol as a case study. Copyright for this tutorial belongs to the [Minister of Environment and Climate Change Canada (2024)](https://www.canada.ca/en/environment-climate-change.html).
+The Government of Canada’s Fuel Life Cycle Assessment (LCA) Model is a tool that allows users to calculate the life cycle carbon intensity (CI) of fuels and energy sources produced and used in Canada. This tutorial is designed to guide students through the basics of conducting a Fuel LCA in openLCA, using conventional bioethanol as the case study.
+
+**Note**: These tutorial is developed by the [Minister of Environment and Climate Change Canada (2024)](https://www.canada.ca/en/environment-climate-change.html). For the latest updates and documentation, visit the [website](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model.html).
 
 ---
 
@@ -16,30 +18,42 @@ Before starting the case study, watch the following videos to become familiar wi
 
 ---
 
-## 🧪 Step 2: Case Study – Conventional Bioethanol Example
+## 🏭 Step 2: Case Study – Conventional Bioethanol Example
 
-In this step, students will apply what they learned to conduct a Fuel LCA case study.
+Follow the steps below to build and calculate the carbon intensity (CI) of conventional bioethanol using the Fuel LCA Model in openLCA. 
 
-1. **Dataset**  
-   - Use the provided **bioethanol production example** (available from Google Drive).  
+1. **Download and Set Up openLCA**  
+   - Install openLCA (v2.0 or higher) from [openLCA.org(https://www.openlca.org/download/).  
+   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).  
    - Import the dataset into openLCA.  
 
-2. **Goal and Scope**  
-   - Define the system boundary: *cradle-to-gate bioethanol production*.  
-   - Set the **functional unit**: 1 MJ or 1 liter of bioethanol.  
+2. **Setting up the overall fuel pathway information (optional)**  
+   - Follow the guidance of the [tutorial slides](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/02%20-%20CFR%20-%20CI%20Calculation%20Training_Conventional%20Bioethanol%20Example_Nov2024.pdf) to complete the [CFR data worksheet](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Conventional%20Bioethanol%20Example_CFR%20Data%20Workbook_Nov2024.xlsx).  
+   - Provide high-level details such as the identification of the fuel production facility, description of the fuel pathway, the type of fuel(s) produced (e.g., bioethanol), and the reporting period.  
 
-3. **Model Setup**  
-   - Identify inputs (e.g., corn, transport, electricity, water).  
-   - Identify outputs (e.g., bioethanol, emissions).  
-   - Review allocation choices (if co-products exist).  
+3. **LCA modeling**  
+   - Download the [Bioethanol inventory data](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Bioethanol%20inventory%20data.xlsx) 
+   - Use the inventory data and the training slides to model the each stage in openLCA, as shown below:
 
-4. **Impact Assessment**  
-   - Run the LCA model.  
-   - Focus on **Global Warming Potential (GWP)** or **Carbon Intensity** results.  
+| Process Stage                | Description                                      | Slide Reference |
+|-------------------------------|--------------------------------------------------|-----------------|
+| Feedstock Production Process and Transportation | Corn (ON/IA) and Wheat (QC) cultivation & transport | Slides 21–24    |
+| Bioethanol Production Process | Conversion of feedstock into bioethanol, with inputs (natural gas, electricity, solar, chemicals) and outputs (bioethanol + co-products WDGS/DDGS) | Slides 29–47    |
+| Bioethanol Distribution       | Distribution of bioethanol to delivery point and end-user (Leg 1 & Leg 2) | Slides 47–51    |
+| Bioethanol Combustion         | End-use combustion of bioethanol at user level | Slide 52        |
+       
 
-5. **Interpretation**  
-   - Compare the results with conventional fossil fuel pathways.  
-   - Discuss potential environmental benefits and trade-offs of bioethanol.  
+6. **Calculate Carbon Intensity (CI)**  
+   - Create product systems for bioethanol from each feedstock (corn and wheat) - Slide p. 53-61.  
+   - Ensure reference flow is set to **F1 MJ**.  
+   - Run the calculation using the **FuelLCAModelLCIA_AR5 method**.  
+   - Record CI results and analyze contributions by process.  
+
+7. **Export the Fuel Pathway**  
+   - Export the completed fuel pathway (JSON-LD format) - Slides p. 62.  
+
+**Reference materials**:
+- [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4) - An official guidance document to help users correctly apply the Fuel LCA Model.
 
 ---
 
@@ -47,7 +61,7 @@ In this step, students will apply what they learned to conduct a Fuel LCA case s
 
 By the end of this tutorial, students will:  
 - Navigate and build models in **openLCA**.  
-- Conduct a **fuel life cycle assessment** using example case data. 
+- Conduct a **fuel life cycle assessment** using a bioethanol case study.
 - Develop skills in interpreting and reporting LCA results.  
 
 ---
