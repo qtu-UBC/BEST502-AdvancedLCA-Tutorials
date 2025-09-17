@@ -73,13 +73,13 @@ The first user input (Input 1) is the feedstock-to-fuel pathway. The user can ch
 Input 2 allows the user to specify how soil organic carbon (SOC) and nitrous oxide (N₂O) emissions are modeled for both domestic and international LUC. These options determine which datasets and emission factors are applied in the calculations.
 
 Here’s what each option means:
-| Option | Name            | Domestic SOC & N₂O Source | International SOC & N₂O Source | Notes / Characteristics |
-|--------|-----------------------------|----------------------------|--------------------------------|--------------------------|
-| 1      | DayCent & Winrock          | **DayCent** (process-based daily SOC model) + COLE for forest | **Winrock dataset** (empirical, region-level EFs) | Combines detailed U.S. soil modeling with Winrock’s international dataset. |
-| 2      | DayCent & AEZ-EF           | **DayCent** + COLE         | **AEZ-EF** (Agro-Ecological Zone emission factors) | Hybrid approach: process-based U.S. modeling + AEZ-based global factors. |
-| 3      | AEZ-EF                     | **AEZ-EF** (applied domestically with COLE forest data) | **AEZ-EF** | Simplest, consistent dataset across domestic & international; recommended for tutorials. |
-| 4      | Century & Winrock          | **CENTURY** (parameterized SOC model) + COLE | **Winrock dataset** | Argonne’s historical approach; more complex than AEZ-EF, still widely used. |
-| 5      | Other methods (Sec. 3–5)   | Alternatives (CENTURY, COLE, Woods Hole, etc.) | Alternatives (Winrock, Woods Hole, IPCC, etc.) | For advanced users; draws directly on detailed datasets in the manual. |
+| Option | Name             | Domestic SOC & N₂O Source | International SOC & N₂O Source | Characteristics (from CCLUB Manual) |
+|--------|-----------------------------|----------------------------|--------------------------------|-------------------------------------|
+| 1      | DayCent & Winrock          | **DayCent** (process-based SOC at daily timestep) + **COLE** for forest aboveground carbon | **Winrock dataset** (state-/country-level EFs for LUC; includes CH₄ & N₂O from biomass burning; no harvested wood product storage) | Provides detailed, process-based domestic SOC; Winrock adds empirical global EFs with foregone sequestration included:contentReference[oaicite:0]{index=0}. |
+| 2      | DayCent & AEZ-EF           | **DayCent** + **COLE**    | **AEZ-EF** (Agro-Ecological Zone emission factors) | Hybrid approach combining U.S. process-based SOC modeling with AEZ-level international carbon/N₂O factors:contentReference[oaicite:1]{index=1}. |
+| 3      | AEZ-EF                     | **AEZ-EF** (applied domestically with COLE for forest) | **AEZ-EF** | Simplified and consistent option; uses spatially explicit AEZ-level emission factors for both domestic and international LUC; recommended for straightforward analysis:contentReference[oaicite:2]{index=2}. |
+| 4      | Century & Winrock          | **CENTURY** (parameterized SOC model, inverse modeling) + **COLE** | **Winrock dataset** | Uses CENTURY-based SOC estimates at county/AEZ level; combined with Winrock’s empirical international dataset:contentReference[oaicite:3]{index=3}. |
+| 5      | Other methods (Sec. 3–5)   | Alternatives: CENTURY/COLE, Woods Hole | Alternatives: Winrock or Woods Hole, IPCC factors | Allows use of alternative datasets (e.g., Woods Hole biome-level EFs, IPCC defaults) for advanced or comparative analysis:contentReference[oaicite:4]{index=4}. |
 
 
 ### 2.3 Set International Dataset — *Input 3*
