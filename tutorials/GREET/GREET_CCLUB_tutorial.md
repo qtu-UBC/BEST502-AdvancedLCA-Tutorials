@@ -1,6 +1,6 @@
 # 🌾 GREET CCLUB Tutorial
 
-The **Carbon Calculator for Land Use and Land Management Change from Biofuels Production (CCLUB)** is an integral component of Argonne National Laboratory’s GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies) model (Wang et al., 2020a, 2020b). It is specifically designed to evaluate greenhouse gas (GHG) emissions resulting from both **land use change (LUC)** and **land management change (LMC)** within the broader framework of biofuel life cycle assessment (LCA).
+The **Carbon Calculator for Land Use and Land Management Change from Biofuels Production (CCLUB)** is an integral component of Argonne National Laboratory’s GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies) model. It is specifically designed to evaluate greenhouse gas (GHG) emissions resulting from both **land use change (LUC)** and **land management change (LMC)** within the broader framework of biofuel life cycle assessment (LCA).
 
 
 **Note**: This tutorial is adapted from the *[CCLUB User Manual (Rev. 6, Sept 2020)](https://greet.anl.gov/publication-cclub-manual-r6-2020)* by Argonne National Laboratory. For more detail, consult the orginal document.
@@ -18,13 +18,16 @@ The **Carbon Calculator for Land Use and Land Management Change from Biofuels Pr
 ---
 
 ## 📝 Case Study:
-This case study examines the GHG emissions arising from land-use change (LUC) associated with different biofuels, focusing on **ethanol production from four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus**.
+This case study explores the GHG emissions arising from LUC across different bioethanol production pathway, focusing on **ethanol derived from four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus**.
 
 
-Before beginning the tutorial, let's review the concepts of LUC and its impact by reading the 'Introduction' of [**Understanding options for ILUC mitigation**](https://theicct.org/wp-content/uploads/2021/06/ILUC-Mitigation-Options_ICCT_nov2016_0.pdf).
+### Background Reading
+1. Before starting the tutorial, let's review the concepts of LUC and their impacts by reading the *Introduction* section of [**Understanding options for ILUC mitigation**](https://theicct.org/wp-content/uploads/2021/06/ILUC-Mitigation-Options_ICCT_nov2016_0.pdf).
 
 * **Direct land use change (dLUC)**: refers to the situations where the conversion of land use pattern occurs as a result of the demand for feedstock production for biofuel and bioproducts.
 * **Indirect land use change (iLUC)**: refers to the scenarios where the land use pattern changes (e.g., grassland converted to crop land) globally to compensate for the commodity supply which is not fulfilled due to the feedstock production for biofuel and bioproducts locally.
+
+2. Next, read the *Introduction* section of the [**CCLUB User Manual**](https://greet.anl.gov/publication-cclub-manual-r6-2020). This section provides background on the purpose of the CCLUB model and explain how CCLUB uses Global Trade Analysis Project (GTAP) outputs with emission factors (EF) to estimate GHG emissions of LUC. 
 
 ---
 
@@ -34,7 +37,7 @@ Before you begin, make sure you have:
 - `CCLUB_2024_Rev1.xlsm` saved in your GREET download folder (e.g., **R&D GREET_2024 Rev1**).
 
 
-Open the Excel workbook. Below is an overview of the CCLUB worksheets:
+Open the Excel workbook. Here is an overview of the CCLUB worksheets:
 | Worksheet                  | Description |
 |----------------------------|-------------|
 | Overview                   | Information on CCLUB-related documentation. |
@@ -61,13 +64,17 @@ Users select input values in the **rose-colored** cells. All options are visible
 Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end.
 
 ### 2.1 Select Feedstock to Fuel Pathway — *Input 1*
-Pick a pathway from the dropdown (e.g., *Corn Ethanol*, *Switchgrass Ethanol*, *Soy Biodiesel*, *HEFA SAF*, *ATJ/ETJ/FT SAF*). This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use. For this case study, we will focus on the following ethanol pathways:
-| # | Ethanol Pathway     |
-|---|---------------------|
-| 1 | Corn Ethanol 2011   |
-| 2 | Stover Ethanol      |
-| 3 | Switchgrass Ethanol |
-| 4 | Miscanthus Ethanol  |
+Pick a pathway from the dropdown list. This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use. The For this case study, we will use the following ethanol scenarios:
+| # | Ethanol Pathway       | GTAP Case Description                                                                 |
+|---|------------------------|---------------------------------------------------------------------------------|
+| 1 | Corn Ethanol 2011      | Increase in corn ethanol production from its 2004 level (3.41 BG) to 15 BG      |
+| 2 | Stover Ethanol         | Increase of ethanol from corn stover by 9 BG, on top of 15 BG corn ethanol (continuous corn) |
+| 3 | Switchgrass Ethanol    | Increase of ethanol from switchgrass by 7 BG, on top of 15 BG corn ethanol      |
+| 4 | Miscanthus Ethanol     | Increase of ethanol from miscanthus by 7 BG, on top of 15 BG corn ethanol       |
+
+Note: 
+1. **GTAP**: 
+2. Each scenario reflects a shock to the economy in response to an increase in demand for a particular biofuel. The
 
 ### 2.2 Set Domestic (U.S.) SOC & N₂O Modeling — *Input 2*
 These settings affect **U.S. (domestic)** emissions only:
