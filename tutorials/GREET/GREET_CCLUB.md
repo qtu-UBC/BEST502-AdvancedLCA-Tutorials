@@ -60,8 +60,14 @@ Users select input values in the **rose-colored** cells. All options are visible
 
 Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end.
 
-### 2.1 Select the Fuel Pathway
-Pick a pathway from the dropdown (e.g., *Corn Ethanol*, *Switchgrass Ethanol*, *Soy Biodiesel*, *HEFA SAF*, *ATJ/ETJ/FT SAF* variants). This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use.
+### 2.1 Select Feedstock to Fuel Pathway — *Input 2*
+Pick a pathway from the dropdown (e.g., *Corn Ethanol*, *Switchgrass Ethanol*, *Soy Biodiesel*, *HEFA SAF*, *ATJ/ETJ/FT SAF*). This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use. For this case study, we will focus on the following ethanol pathways:
+| # | Ethanol Pathway     |
+|---|---------------------|
+| 1 | Corn Ethanol 2011   |
+| 2 | Stover Ethanol      |
+| 3 | Switchgrass Ethanol |
+| 4 | Miscanthus Ethanol  |
 
 ### 2.2 Set Domestic (U.S.) SOC & N₂O Modeling — *Input 2*
 These settings affect **U.S. (domestic)** emissions only:
