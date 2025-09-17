@@ -18,16 +18,13 @@ The **Carbon Calculator for Land Use and Land Management Change from Biofuels Pr
 ---
 
 ## 📝 Case Study:
-This case study explores the GHG emissions arising from LUC across different bioethanol production pathway, focusing on **ethanol derived from four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus**.
+This case study explores the GHG emissions arising from LUC across different **bioethanol production pathway**, focusing on ethanol derived from **four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus**.
 
 
 ### Background Reading
-1. Before starting the tutorial, let's review the concepts of LUC and their impacts by reading the *Introduction* section of [**Understanding options for ILUC mitigation**](https://theicct.org/wp-content/uploads/2021/06/ILUC-Mitigation-Options_ICCT_nov2016_0.pdf).
+1. Before starting the tutorial, let's review the concepts of LUC and their impacts by reading the *'Introduction'* section of [**Understanding options for ILUC mitigation**](https://theicct.org/wp-content/uploads/2021/06/ILUC-Mitigation-Options_ICCT_nov2016_0.pdf). To summarize, **direct land use change (dLUC)** refers to the situations where the conversion of land use pattern occurs as a result of the demand for feedstock production for biofuel and bioproducts.**Indirect land use change (iLUC)** refers to the scenarios where the land use pattern changes (e.g., grassland converted to crop land) globally to compensate for the commodity supply which is not fulfilled due to the feedstock production for biofuel and bioproducts locally.
 
-* **Direct land use change (dLUC)**: refers to the situations where the conversion of land use pattern occurs as a result of the demand for feedstock production for biofuel and bioproducts.
-* **Indirect land use change (iLUC)**: refers to the scenarios where the land use pattern changes (e.g., grassland converted to crop land) globally to compensate for the commodity supply which is not fulfilled due to the feedstock production for biofuel and bioproducts locally.
-
-2. Next, read the *Introduction* section of the [**CCLUB User Manual**](https://greet.anl.gov/publication-cclub-manual-r6-2020). This section provides background on the purpose of the CCLUB model and explain how CCLUB uses Global Trade Analysis Project (GTAP) outputs with emission factors (EF) to estimate GHG emissions of LUC. 
+2. Next, read the *'Introduction'* section of the [**CCLUB User Manual**](https://greet.anl.gov/publication-cclub-manual-r6-2020). This section provides background on the purpose of the CCLUB model and explain how CCLUB uses **Global Trade Analysis Project (GTAP)** outputs with emission factors (EF) to estimate GHG emissions of LUC. 
 
 ---
 
@@ -53,18 +50,16 @@ Open the Excel workbook. Here is an overview of the CCLUB worksheets:
 | Saved Results              | LUC and LMC results to be used in GREET. |
 
 
-- Locate the **LUC Scenario & Results** sheet — this is where we will calculate the GHG emissions associated with iLUC for bioethanol production pathways.
-
-Users select input values in the **rose-colored** cells. All options are visible in the **yellow** cells in each section.
+- Locate the **LUC Scenario & Results** sheet — this is where we will calculate the GHG emissions associated with LUC for bioethanol production pathways.
 
 ---
 
 ## Step 2: Choose & Configure Your Scenario (LUC)
 
-Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end.
+Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end. Users select input values in the **rose-colored** cells. All options are visible in the **yellow** cells in each section.
 
 ### 2.1 Select Feedstock to Fuel Pathway — *Input 1*
-Pick a pathway from the dropdown list. This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use. The For this case study, we will use the following ethanol scenarios:
+The first user input (Input 1) is the feedstock-to-fuel pathway. The user can choose from among the biofuel production scenarios, which include options for corn and cellulosic ethanol feedstock (corn stover, switchgrass, or Miscanthus), and soy biodiesel. Each scenario reflects a shock to the economy in response to an increase in demand for a particular biofuel modeling by **GTAP**. In this case study, we will focus on the following ethanol production scenarios:
 | # | Ethanol Pathway       | GTAP Case Description                                                                 |
 |---|------------------------|---------------------------------------------------------------------------------|
 | 1 | Corn Ethanol 2011      | Increase in corn ethanol production from its 2004 level (3.41 BG) to 15 BG      |
@@ -72,9 +67,7 @@ Pick a pathway from the dropdown list. This determines which **GTAP** land-use-c
 | 3 | Switchgrass Ethanol    | Increase of ethanol from switchgrass by 7 BG, on top of 15 BG corn ethanol      |
 | 4 | Miscanthus Ethanol     | Increase of ethanol from miscanthus by 7 BG, on top of 15 BG corn ethanol       |
 
-Note: 
-1. **GTAP**: 
-2. Each scenario reflects a shock to the economy in response to an increase in demand for a particular biofuel. The
+**Note**: For more details on GTAP modeling, see *Section 2* of the **CCLUB User Manual**.
 
 ### 2.2 Set Domestic (U.S.) SOC & N₂O Modeling — *Input 2*
 These settings affect **U.S. (domestic)** emissions only:
