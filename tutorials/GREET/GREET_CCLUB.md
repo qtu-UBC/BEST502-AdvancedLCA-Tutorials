@@ -30,18 +30,35 @@ Before beginning the tutorial, let's review the concepts of LUC and its impact b
 
 ### Step 1: Set Up & Files
 
-Before we begin, make sure you have:
-- The **CCLUB Excel workbook** (macro-enabled, `.xlsm`).
-- (Optional) **GREET** installed if you plan to use the **Copy to GREET** button.
-- **Macros enabled** in Excel (CCLUB uses buttons and VBA).
+Before you begin, make sure you have:
+- `CCLUB_2024_Rev1.xlsm` saved in your GREET download folder (e.g., **R&D GREET_2024 Rev1**).
 
-**Open the workbook** and locate the **LUC Scenario & Results** sheet. Inputs appear in **rose-colored** cells; dropdown options appear in **yellow** cells.
+
+Open the Excel workbook. Below is an overview of the CCLUB worksheets:
+| Worksheet                  | Description |
+|----------------------------|-------------|
+| Overview                   | Information on CCLUB-related documentation. |
+| Scenario & Results         | Enables selection of data sources, key assumptions, and biofuel production scenarios, and displays results. Includes two worksheets for LUC and LMC scenarios. |
+| Modeling                   | Computes carbon, N₂O, and CH₄ emissions from LUC. |
+| Domestic C-Factors         | Derives carbon and N₂O emission factors for domestic LUC. |
+| International C-Factors    | Derives carbon, N₂O, and CH₄ emission factors for international LUC. |
+| GTAP Data                  | Lists and summarizes GTAP source data. |
+| C-Database                 | Contains soil carbon emission factors from a parameterized CENTURY model and forest aboveground carbon data from COLE at county level for domestic LUC and LMC. |
+| Forest Land Area           | Computes forest correction factor for shrubland transitions. |
+| International Conversion   | Source data for international land conversions. |
+| International Reversion    | Source data for international land reversions. |
+| Saved Results              | LUC and LMC results to be used in GREET. |
+
+
+Locate the **LUC Scenario & Results** sheet — this is where we will calculate the GHG emissions associated with iLUC for bioethanol production pathways.  
+
+Inputs appear in **rose-colored** cells; dropdown options appear in **yellow** cells.
 
 ---
 
 ## Step 2: Choose & Configure Your Scenario (LUC)
 
-Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then run the model.
+Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then get the result.
 
 ### 2.1 Select the Fuel Pathway
 Pick a pathway from the dropdown (e.g., *Corn Ethanol*, *Switchgrass Ethanol*, *Soy Biodiesel*, *HEFA SAF*, *ATJ/ETJ/FT SAF* variants). This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use.
