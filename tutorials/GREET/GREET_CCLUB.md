@@ -1,8 +1,11 @@
 # 🌾 GREET CCLUB Tutorial
 
-The Carbon Calculator for Land Use and Land Management Change from Biofuels Production (CCLUB) is an integral component of Argonne National Laboratory’s GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies) model (Wang et al., 2020a, 2020b). It is specifically designed to evaluate greenhouse gas (GHG) emissions resulting from both land use change (LUC) and land management change (LMC) within the broader framework of biofuel life cycle assessment (LCA).
+The **Carbon Calculator for Land Use and Land Management Change from Biofuels Production (CCLUB)** is an integral component of Argonne National Laboratory’s GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies) model (Wang et al., 2020a, 2020b). It is specifically designed to evaluate greenhouse gas (GHG) emissions resulting from both **land use change (LUC)** and **land management change (LMC)** within the broader framework of biofuel life cycle assessment (LCA).
 
-**Note**: This tutorial is adapted from the *CCLUB User Manual (Rev. 6, Sept 2020)* by Argonne National Laboratory. For full details, consult the official CCLUB User Manual.
+
+**Note**: This tutorial is adapted from the *[CCLUB User Manual (Rev. 6, Sept 2020)](https://greet.anl.gov/publication-cclub-manual-r6-2020)* by Argonne National Laboratory. For more detail, consult the orginal document.
+
+
 ---
 
 ## 📚 CCLUB Resources  
@@ -15,15 +18,17 @@ The Carbon Calculator for Land Use and Land Management Change from Biofuels Prod
 ---
 
 ## 📝 Case Study:
-This case study examines the GHG emissions arising from land-use change (LUC) associated with different biofuels, focusing on ethanol production from four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus.
+This case study examines the GHG emissions arising from land-use change (LUC) associated with different biofuels, focusing on **ethanol production from four biomass feedstocks: corn, corn stover, switchgrass, and Miscanthus**.
+
 
 Before beginning the tutorial, let's review the concepts of LUC and its impact by reading the 'Introduction' of [**Understanding options for ILUC mitigation**](https://theicct.org/wp-content/uploads/2021/06/ILUC-Mitigation-Options_ICCT_nov2016_0.pdf).
 
-To summarize:
-* Direct land use change (dLUC): refers to the situations where the conversion of land use pattern occurs as a result of the demand for feedstock production for biofuel and bioproducts.
-* Indirect land use change (iLUC): refers to the scenarios where the land use pattern changes (e.g., grassland converted to crop land) globally to compensate for the commodity supply which is not fulfilled due to the feedstock production for biofuel and bioproducts locally.
+* **Direct land use change (dLUC)**: refers to the situations where the conversion of land use pattern occurs as a result of the demand for feedstock production for biofuel and bioproducts.
+* **Indirect land use change (iLUC)**: refers to the scenarios where the land use pattern changes (e.g., grassland converted to crop land) globally to compensate for the commodity supply which is not fulfilled due to the feedstock production for biofuel and bioproducts locally.
 
-### 📥 Step 1: Set Up & Files
+---
+
+### Step 1: Set Up & Files
 
 Before we begin, make sure you have:
 - The **CCLUB Excel workbook** (macro-enabled, `.xlsm`).
@@ -34,7 +39,7 @@ Before we begin, make sure you have:
 
 ---
 
-## 🧭 Step 2: Choose & Configure Your Scenario (LUC)
+## Step 2: Choose & Configure Your Scenario (LUC)
 
 Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then run the model.
 
@@ -82,7 +87,7 @@ Set the policy analysis horizon (e.g., **30 years**) over which total LUC emissi
 
 ---
 
-## ▶️ Step 3: Run & (Optional) Export to GREET
+## Step 3: Run & (Optional) Export to GREET
 
 - Click **Run Simulation** to calculate LUC emissions.
 - (Optional) Click **Copy to GREET** to export your inputs & results into a live GREET spreadsheet for integration with full fuel LCA.
