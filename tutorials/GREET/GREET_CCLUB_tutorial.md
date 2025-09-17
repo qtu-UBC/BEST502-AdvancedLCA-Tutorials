@@ -82,6 +82,17 @@ Here’s what each option means:
 | 5      | Other methods (Sec. 3–5)   | Alternatives: CENTURY/COLE, Woods Hole | Alternatives: Winrock or Woods Hole, IPCC factors | Allows use of alternative datasets (e.g., Woods Hole biome-level EFs, IPCC defaults) for advanced or comparative analysis:contentReference[oaicite:4]{index=4}. |
 
 
+| **Name**       | **Domestic SOC & N₂O Source** | **International SOC & N₂O Source** | **Main Assumptions** | **Characteristics** |
+|----------------|--------------------------------|-------------------------------------|-----------------------|----------------------|
+| **DayCent**    | ✔️ Process-based SOC at daily timestep; paired with COLE for forest aboveground carbon | – | Daily time-step SOC modeling; calibrated for U.S. conditions | High-resolution, process-based SOC modeling for the U.S.; captures daily dynamics of soil carbon and N₂O. |
+| **CENTURY**    | ✔️ Parameterized SOC model (inverse modeling) at county/AEZ level; paired with COLE | – | Inverse modeling approach; county/AEZ averages | Provides county- or AEZ-level SOC estimates; less dynamic than DayCent but widely applied in U.S. LCA studies. |
+| **AEZ-EF**     | ✔️ Can be applied domestically (with COLE for forest carbon) | ✔️ AEZ-level global EFs for forest, grassland, cropland | Biome-/AEZ-level averages; includes peatland-specific factors (e.g., palm expansion in SE Asia) | Spatially explicit, zone-level factors; consistent across domestic and international use; used by CARB for LCFS. |
+| **Winrock**    | – (optional for U.S. if selected instead of process models) | ✔️ Country-/administrative-level EFs for forest, grassland, cropland pasture conversions | (1) Includes CH₄ & N₂O from burning; (2) No HWP carbon storage; (3) Includes foregone sequestration | Empirically derived, globally consistent; often yields higher emissions due to conservative assumptions; aligned with EPA RFS analysis. |
+| **Woods Hole** | ✔️ Alternative U.S. biome-level EFs (forest/grassland conversion) | ✔️ Alternative biome-level global EFs | Biome-level averages; includes partial HWP storage assumptions | Biome-scale (e.g., temperate evergreen forest); simpler than Winrock; often used for sensitivity or comparison. |
+| **Other / IPCC defaults** | Optional | Optional | IPCC Tier 1 or other published defaults | Provides flexibility for sensitivity or comparative analysis. |
+
+
+
 ### 2.3 Set International Dataset — *Input 3*
 - **3a — International dataset**: choose **Winrock** (country/state-level) or **Woods Hole/AEZ-EF** (biome/AEZ-level) for **non-U.S.** carbon, CH₄, and N₂O emission factors (EFs).
 - **3b — Palm expansion on peat (Winrock only)**: percent of palm expansion on peat in SE Asia (commonly **0%** or **22%**).
