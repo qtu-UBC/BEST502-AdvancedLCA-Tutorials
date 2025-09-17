@@ -50,15 +50,15 @@ Open the Excel workbook. Below is an overview of the CCLUB worksheets:
 | Saved Results              | LUC and LMC results to be used in GREET. |
 
 
-Locate the **LUC Scenario & Results** sheet — this is where we will calculate the GHG emissions associated with iLUC for bioethanol production pathways.  
+- Locate the **LUC Scenario & Results** sheet — this is where we will calculate the GHG emissions associated with iLUC for bioethanol production pathways.
 
-Inputs appear in **rose-colored** cells; dropdown options appear in **yellow** cells.
+Users select input values in the **rose-colored** cells. All options are visible in the **yellow** cells in each section.
 
 ---
 
 ## Step 2: Choose & Configure Your Scenario (LUC)
 
-Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then get the result.
+Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end.
 
 ### 2.1 Select the Fuel Pathway
 Pick a pathway from the dropdown (e.g., *Corn Ethanol*, *Switchgrass Ethanol*, *Soy Biodiesel*, *HEFA SAF*, *ATJ/ETJ/FT SAF* variants). This determines which **GTAP** land-use-change matrix (vintage/case) CCLUB will use.
