@@ -70,53 +70,64 @@ The first user input (Input 1) is the feedstock-to-fuel pathway. The user can ch
 **Note**: For more details on GTAP modeling, see *Section 2* of the **CCLUB User Manual**.
 
 ### 2.2 Select an SOC & N₂O Modeling Scenario — *Input 2*
-User input 2 allows the user to specify how soil organic carbon (SOC) and nitrous oxide (N₂O) emissions are modeled for both domestic and international LUC. These options determine which datasets and emission factors are applied in the calculations.
+Input 2 allows the user to specify how soil organic carbon (SOC) and nitrous oxide (N₂O) emissions are modeled for both domestic and international LUC. These options combine domestic and international modeling scenarios to determine which datasets and emission factors are used in the calculations.
 
 Here is a summary of the domestic & international emissions modeling scenarios:
 | **Name**       | **Domestic SOC & N₂O Source** | **International SOC & N₂O Source** | **Main Assumptions** | **Characteristics** |
 |----------------|--------------------------------|-------------------------------------|-----------------------|----------------------|
 | **DayCent**    | ✔️ Process-based SOC at daily timestep; paired with COLE for forest aboveground carbon | – | Daily time-step SOC modeling; calibrated for U.S. conditions | High-resolution, process-based SOC modeling for the U.S.; captures daily dynamics of soil carbon and N₂O. |
 | **CENTURY**    | ✔️ Parameterized SOC model (inverse modeling) at county/AEZ level; paired with COLE | – | Inverse modeling approach; county/AEZ averages | Provides county- or AEZ-level SOC estimates; less dynamic than DayCent but widely applied in U.S. LCA studies. |
-| **AEZ-EF**     | ✔️ Can be applied domestically (with COLE for forest carbon) | ✔️ AEZ-level global EFs for forest, grassland, cropland | Biome-/AEZ-level averages; includes peatland-specific factors (e.g., palm expansion in SE Asia) | Spatially explicit, zone-level factors; consistent across domestic and international use; used by CARB for LCFS. |
+| **AEZ-EF**     | ✔️ Can be applied domestically (with COLE for forest carbon) | ✔️ AEZ-level global EFs for forest, grassland, cropland | Biome-/AEZ-level averages; includes peatland-specific factors (e.g., palm expansion in SE Asia) | Spatially explicit, zone-level factors; consistent across domestic and international use. |
 | **Winrock**    | – (optional for U.S. if selected instead of process models) | ✔️ Country-/administrative-level EFs for forest, grassland, cropland pasture conversions | (1) Includes CH₄ & N₂O from burning; (2) No HWP carbon storage; (3) Includes foregone sequestration | Empirically derived, globally consistent; often yields higher emissions due to conservative assumptions; aligned with EPA RFS analysis. |
 | **Woods Hole** | ✔️ Alternative U.S. biome-level EFs (forest/grassland conversion) | ✔️ Alternative biome-level global EFs | Biome-level averages; includes partial HWP storage assumptions | Biome-scale (e.g., temperate evergreen forest); simpler than Winrock; often used for sensitivity or comparison. |
 | **Other / IPCC defaults** | Optional | Optional | IPCC Tier 1 or other published defaults | Provides flexibility for sensitivity or comparative analysis. |
 
+For this tutorial, we will select the **3 - AEZ-EF option**, since it provides a consistent baseline for both domestic and international SOC and N₂O modeling. Selecting the Input 2 will update the choices in Input 3a, Input 3b, and Input 5 automatically.
+
+**Note**: For more details on domestic & international carbon emissions scenarios, see *Section 3-5* of the **CCLUB User Manual**.
+
+### 2.3 Harvested Wood Product (HWP) Scenario — *Input 7*
+Users can select an HWP scenario for Input 4, either using the assumptions of Heath et al. (1996) or assuming all forest aboveground carbon is emitted when forests are converted to biofuel feedstock production.
+
+In this case study, we will select the default **HEATH Scenario**.
+
+### 2.4 Select International Initial Land Clearing - Bimoass Burning — *Input 8*
+In Input 8, users can indicate whether to include biomass burning for initial land clearing in international LUC. Answer “No” indicates no burning for all countries, and “Yes” for burning in all international countries only when “CENTURY SOC” or “Woods Hole” is selected in Input 2. If Input 2 selects “Winrock,” then “Yes” indicates burning in countries in which biomass burning is a common practice based on Winrock estimates (Harrison et al. 1996).
+
+In this case study, we will select the **No**, since we select the AEZ-EF option in Input 2, rather than Winrock, CENTURY SOC, or Woods Hole.
+
+### 2.5 Forest Prorating Factor — *Input 9*
+Input 9 allows users to adopt adjustments to converted forest lands by selecting “Yes” or to use raw GTAP data by selecting “No.”
+
+In this case study, we will select the default **Yes**.
+
+**Note**: For details on modification of GTAP data for area of converted forest, see *Section 2* of the **CCLUB User Manual**.
+
+### 2.6 Average Approach for domestic SOC and international emissions — *Input 10*
+Input 10 allows users to choose an approach for spatial average in both domestic and international LUC factors.
+
+We will select the default **Area Weighted Mean**.
+
+### 2.7 Emissions Amortization Period — *Input 12*
+Users can alter the amortization period in Input 12.
+
+Use the default **30-year**. 
+
+### 2.8 Summarize all steps:
+
+| **Step** | **Input** | **Operations** |
+|----------|-----------|----------------|
+| 2.1 | Input 1 – Feedstock-to-Fuel Pathway | Select ethanol pathway (Corn Ethanol 2011, Stover Ethanol, Switchgrass Ethanol, Miscanthus Ethanol). |
+| 2.2 | Input 2 – SOC & N₂O Modeling Scenario | Select **3 – AEZ-EF** for consistent domestic & international SOC/N₂O modeling. |
+| 2.3 | Input 4 – Harvested Wood Product (HWP) Scenario | Select **HEATH Scenario** (default). |
+| 2.4 | Input 8 – International Initial Land Clearing (Biomass Burning) | Select **No** (AEZ-EF does not apply burning toggle). |
+| 2.5 | Input 9 – Forest Prorating Factor | Select **Yes** (adjust GTAP forest areas to match U.S. data). |
+| 2.6 | Input 10 – Average Approach | Select **Area Weighted Mean** (default). |
+| 2.7 | Input 12 – Emissions Amortization Period | Select **30 years** (default). |
+
+## Step 3: Check the result
 
 
-### 2.3 Set International Dataset — *Input 3*
-- **3a — International dataset**: choose **Winrock** (country/state-level) or **Woods Hole/AEZ-EF** (biome/AEZ-level) for **non-U.S.** carbon, CH₄, and N₂O emission factors (EFs).
-- **3b — Palm expansion on peat (Winrock only)**: percent of palm expansion on peat in SE Asia (commonly **0%** or **22%**).
-
-> **Tip (Canada-focused analysis):** Canada is **international** in CCLUB. Select **Winrock** to use **country-level** EFs for Canada.
-
-### 2.4 Configure Forest Products Assumption (U.S.) — *Input 4*
-Choose **HWP (Harvested Wood Products)** handling for U.S. forests when converted:
-- **Heath et al. (1996)** assumptions, or
-- **All aboveground C emitted** (no product credit).
-
-### 2.5 Biomass Burning in International Clearing — *Input 5*
-- With **Winrock**: “Yes” applies burning only in countries where it is common (per Winrock); “No” disables it.
-- With **CENTURY/Woods Hole**: “Yes” applies burning in all international countries; “No” disables it.
-
-### 2.6 U.S. Forest Adjustment (Proration) — *Input 6*
-Toggle **Yes** to apply CCLUB’s adjustment that splits GTAP “forest” conversions into **mature forest** vs **young-forest/shrub** (to better match U.S. inventories); **No** keeps raw GTAP.
-
-### 2.7 Spatial Averaging Method — *Input 7*
-Choose how EFs are aggregated spatially (e.g., **area-weighted**). Applies to both domestic and international EF aggregation.
-
-### 2.8 Foregone Sequestration Period — *Input 8*
-Use **30 years** to align with underlying EF time horizons (consistent with CENTURY/Winrock modeling). Large deviations can lead to inconsistent results.
-
-### 2.9 Amortization Period — *Input 9*
-Set the policy analysis horizon (e.g., **30 years**) over which total LUC emissions are annualized.
-
----
-
-## Step 3: Run & (Optional) Export to GREET
-
-- Click **Run Simulation** to calculate LUC emissions.
-- (Optional) Click **Copy to GREET** to export your inputs & results into a live GREET spreadsheet for integration with full fuel LCA.
 
 ---
 
