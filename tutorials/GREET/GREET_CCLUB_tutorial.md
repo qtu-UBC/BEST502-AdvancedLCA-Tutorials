@@ -31,7 +31,7 @@ This case study explores the GHG emissions arising from LUC across different **b
 ### Step 1: Set Up & Files
 
 Before you begin, make sure you have:
-- `CCLUB_2024_Rev1.xlsm` saved in your GREET download folder (e.g., **R&D GREET_2024 Rev1**) from the *1_GREET_tutorial*.
+- `CCLUB_2024_Rev1.xlsm` (macro-enable) saved in your GREET download folder (e.g., **R&D GREET_2024 Rev1**) from the *1_GREET_tutorial*.
 
 
 Open the Excel workbook. Here is an overview of the CCLUB worksheets:
@@ -56,7 +56,7 @@ Open the Excel workbook. Here is an overview of the CCLUB worksheets:
 
 ## Step 2: Choose & Configure Your Scenario (LUC)
 
-Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end. Users select input values in the **rose-colored** cells. All options are visible in the **yellow** cells in each section.
+Follow the inputs **top → bottom** on the **LUC Scenario & Results** sheet, then review the results at the end. Users select input values in the **rose-colored** cells, while **grey** cell cannot be selected or modified. All options are visible in the **yellow** cells in each section.
 
 ### 2.1 Select Feedstock to Fuel Pathway — *Input 1*
 The first user input (Input 1) is the feedstock-to-fuel pathway. The user can choose from among the biofuel production scenarios, which include options for corn and cellulosic ethanol feedstock (corn stover, switchgrass, or Miscanthus), and soy biodiesel. Each scenario reflects a shock to the economy in response to an increase in demand for a particular biofuel modeling by **GTAP**. In this case study, we will focus on the following ethanol production scenarios:
@@ -109,7 +109,7 @@ Input 10 allows users to choose an approach for spatial average in both domestic
 We will select the default **Area Weighted Mean**.
 
 ### 2.7 Emissions Amortization Period — *Input 12*
-Users can alter the amortization period in Input 12.
+Users can alter the amortization period in Input 12. Use with Caution Since Emissions Factors are Only Valid for 25-35 Year Time Horizon. Choosing values outside that time window may produce inaccurate results.
 
 Use the default **30-year**. 
 
@@ -117,17 +117,18 @@ Use the default **30-year**.
 
 | **Step** | **Input** | **Operations** |
 |----------|-----------|----------------|
-| 2.1 | Input 1 – Feedstock-to-Fuel Pathway | Select ethanol pathway (Corn Ethanol 2011, Stover Ethanol, Switchgrass Ethanol, Miscanthus Ethanol). |
+| 2.1 | Input 1 – Feedstock-to-Fuel Pathway | Select **ethanol pathway (Corn Ethanol 2011, Stover Ethanol, Switchgrass Ethanol, Miscanthus Ethanol)**. |
 | 2.2 | Input 2 – SOC & N₂O Modeling Scenario | Select **3 – AEZ-EF** for consistent domestic & international SOC/N₂O modeling. |
 | 2.3 | Input 4 – Harvested Wood Product (HWP) Scenario | Select **HEATH Scenario** (default). |
-| 2.4 | Input 8 – International Initial Land Clearing (Biomass Burning) | Select **No** (AEZ-EF does not apply burning toggle). |
-| 2.5 | Input 9 – Forest Prorating Factor | Select **Yes** (adjust GTAP forest areas to match U.S. data). |
+| 2.4 | Input 8 – International Initial Land Clearing (Biomass Burning) | Select **No**. |
+| 2.5 | Input 9 – Forest Prorating Factor | Select **Yes** (default). |
 | 2.6 | Input 10 – Average Approach | Select **Area Weighted Mean** (default). |
 | 2.7 | Input 12 – Emissions Amortization Period | Select **30 years** (default). |
 
-## Step 3: Check the result
+## Step 3: View the result
+Once all inputs are selected, the user can view results within CCLUB as described in the following paragraph. The red-highlighted box in the results section contains the total carbon, N2O & CH4 or total GHG emissions associated with the selected scenario in units of g CO2e/MJ.
 
-
+**Note**: The sections 'ILUC Emissions - Belowground Crop Biomass C change' and 'Other Indirect Effect Emissions' are available onlt for the pathways of GTAP 2014 and 2017 data.
 
 ---
 
