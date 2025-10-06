@@ -14,8 +14,21 @@ The GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies
 - [**GREET Model Download**](https://greet.anl.gov/index.php?content=greetdotnet) 
    Download the GREET software (GREET.net and Excel versions) for running life cycle simulations of fuels and vehicle technologies. 
 
+- [**GREET Youtube Tutorial**](https://www.youtube.com/@greetmodeltutorialvideos5576) 
+   Video tutorials covering the use of the R&D GREET model and more.  
+
+- [**GREET Workshop Training Materials**](https://greet.anl.gov/greet_train_the_trainer) 
+   Official training materials introducing the modeling capabilities of R&D GREET and its applications in evaluating the energy use and environmental impacts of transportation fuels.
+   **Note: It is highly recommended to read the 'Introduction to R&D GREET' and 'Overview of R&D GREET 1: Fuel Cycle Analysis' before starting the case study.**
+
+- [**Youtube Video - Dr Michael Wang: Life-Cycle Analysis of Technologies with the GREET LCA Model**](https://www.youtube.com/watch?v=2ZjFsqj7odw) 
+   An introductory video presented by the lead developer of the GREET model at Argonne National Laboratory, convering 1) GREET LCA modeling approach; 2) key issues affecting LCA results, and 3) LCA results for vehicle technologies and transportation fuels.
+
 ---
 
 ## 📝 Case Study:
+The GREET model provides two options: GREET .NET, which offers a graphical and user-friendly interface for exploring and analyzing complex energy and fuel pathways, and GREET Excel, a spreadsheet-based version that allows users to view and modify explicit formulas within the sheets. This tutorial will use **GREET Excel** for demonstration.
 
+Download the **GREET tutorial - BEST 502** and follow the step-by -step instructions to complete the tutorial. 
 
+If you’re interested in how the GREET model calculates energy consumption and GHG emissions, you can access the GREET YouTube tutorial shown above.
