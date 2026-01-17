@@ -152,6 +152,24 @@
             </div>
         </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+            <!-- Project Lifetime Slider -->
+            <div class="bg-indigo-50 p-4 rounded-lg shadow-sm">
+                <label for="projectLifetime" class="block text-lg font-medium text-gray-800 mb-2">
+                    Project Lifetime (<span id="projectLifetimeValue">100</span> years)
+                </label>
+                <input type="range" id="projectLifetime" value="100" min="10" max="200" step="5"
+                       class="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer range-lg focus:outline-none focus:ring-indigo-500 focus:ring-2">
+            </div>
+            <div class="bg-indigo-50 p-4 rounded-lg shadow-sm lg:col-span-2">
+                <p class="text-sm text-indigo-900 leading-relaxed">
+                    ISO 13391-1 evaluates HWP carbon storage over a defined reporting period (project lifetime)
+                    using first-order decay. Extending the lifetime increases the modeled time horizon for remaining
+                    carbon and shifts the storage curve accordingly, while shorter lifetimes show more of the stock
+                    remaining at the reporting cut-off.
+                </p>
+            </div>
+        </div>
 
         <button id="calculateBtn"
                 class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition transform hover:scale-105 duration-200 ease-in-out mb-8">
@@ -168,7 +186,7 @@
                 <div class="flex flex-col">
                     <span class="text-xl font-medium text-gray-900">Net HWP Contribution (Current Period):</span>
                     <span class="text-sm text-pink-900">
-                        Portion of the initial biogenic carbon credited as stored in HWPs for this reporting period (i.e., right after production, before future decay, using ISO 13391 coefficients).
+                        Computed at time of production without simulating decay with your user-defined half-lives, using Tier-1 ISO coefficients (which themselves reflect default decay/recycling assumptions).
                         Fibre/Paper recycling rate changes this via its coefficient; half-life inputs only affect the decay chart, not this number.
                     </span>
                 </div>
@@ -177,7 +195,7 @@
         </div>
 
         <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-4">
-            Carbon Storage Over 100 Years
+            Carbon Storage Over <span id="projectLifetimeHeading">100</span> Years
         </h2>
         <div class="relative bg-gray-50 rounded-lg p-4 md:p-6 shadow-inner border border-gray-200">
             <canvas id="carbonChart"></canvas>
@@ -227,6 +245,9 @@
 
         const recyclingRateInput = document.getElementById('recyclingRate');
         const recyclingRateValueSpan = document.getElementById('recyclingRateValue');
+        const projectLifetimeInput = document.getElementById('projectLifetime');
+        const projectLifetimeValueSpan = document.getElementById('projectLifetimeValue');
+        const projectLifetimeHeadingSpan = document.getElementById('projectLifetimeHeading');
         const calculateBtn = document.getElementById('calculateBtn');
         const initialCarbonSpan = document.getElementById('initialCarbon');
         const hwpContributionSpan = document.getElementById('hwpContribution');
@@ -323,8 +344,8 @@
 
                 hwpContributionSpan.textContent = `${totalNetHwpContribution.toFixed(2)} tCO₂e`;
 
-                // 3. Simulate Carbon Storage Over 100 Years
-                const yearsToSimulate = 100;
+                // 3. Simulate Carbon Storage Over Project Lifetime
+                const yearsToSimulate = parseInt(projectLifetimeInput.value, 10) || 100;
                 const labels = Array.from({ length: yearsToSimulate + 1 }, (_, i) => i);
 
                 const decaySawnWood = simulateDecay(bcSawnWood, userHalfLives.sawnWood, yearsToSimulate);
@@ -417,6 +438,12 @@
         calculateBtn.addEventListener('click', updateSimulation);
         recyclingRateInput.addEventListener('input', () => {
             recyclingRateValueSpan.textContent = recyclingRateInput.value;
+        });
+        projectLifetimeInput.addEventListener('input', () => {
+            const lifetimeValue = projectLifetimeInput.value;
+            projectLifetimeValueSpan.textContent = lifetimeValue;
+            projectLifetimeHeadingSpan.textContent = lifetimeValue;
+            updateSimulation();
         });
 
         // Add event listeners for new assumption inputs
