@@ -24,8 +24,9 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
 
 1. **Download and Set Up openLCA**  
    - Install openLCA (v2.0 or higher) from [openLCA.org(https://www.openlca.org/download/).  
-   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from the [Website](https://data-donnees.az.ec.gc.ca/data/climate/framework/fuel-life-cycle-assessment-model/English/1-Fuel%20LCA%20Model/Fuel%20LCA%20Model%20(latest%20version)/Fuel%20LCA%20Model%20database?lang=en).  
-   - Import the dataset into openLCA.  
+   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from the [Website](https://data-donnees.az.ec.gc.ca/data/climate/framework/fuel-life-cycle-assessment-model/English/1-Fuel%20LCA%20Model/Fuel%20LCA%20Model%20(latest%20version)/Fuel%20LCA%20Model%20database?lang=en).
+   - Create an empty database.
+   - Import the downloaded dataset into openLCA.  
 
 2. **Setting up the overall fuel pathway information (optional)**  
    - Follow the guidance of the [tutorial slides](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/02%20-%20CFR%20-%20CI%20Calculation%20Training_Conventional%20Bioethanol%20Example_Nov2024.pdf) to complete the [CFR data worksheet](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Conventional%20Bioethanol%20Example_CFR%20Data%20Workbook_Nov2024.xlsx).  
