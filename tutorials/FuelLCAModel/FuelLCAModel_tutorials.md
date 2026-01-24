@@ -12,11 +12,9 @@ The Government of Canada’s Fuel Life Cycle Assessment (LCA) Model is a tool th
 
 Before starting the case study, watch the following videos to become familiar with how the **Government of Canada’s Fuel LCA Model** is implemented in **openLCA**:  
 
-- [**Part 1: Walkthrough of the Model in openLCA**](https://www.youtube.com/watch?v=pamF7GONNXk)
-  This video provides an overview of the Fuel LCA Model and demonstrates its structure and workflow in the openLCA software.   
+- [**Part 1: Walkthrough of the Model in openLCA**](https://www.youtube.com/watch?v=pamF7GONNXk) **[34.26 min]**. This video provides an overview of the Fuel LCA Model and demonstrates its structure and workflow in the openLCA software.
 
-- [**Part 2: Demonstration of a Carbon Intensity Calculation**](https://www.youtube.com/watch?v=pnod3YNYrro) 
-  This video walks through the process of calculating the carbon intensity (CI) of fuels using the Fuel LCA Model in openLCA.  
+- [**Part 2: Demonstration of a Carbon Intensity Calculation**](https://www.youtube.com/watch?v=pnod3YNYrro) **[54.13 min]**. This video walks through the process of calculating the carbon intensity (CI) of fuels using the Fuel LCA Model in openLCA.
 
 ---
 
