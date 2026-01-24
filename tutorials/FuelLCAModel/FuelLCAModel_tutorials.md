@@ -24,7 +24,7 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
 
 1. **Download and Set Up openLCA**  
    - Install openLCA (v2.0 or higher) from [openLCA.org(https://www.openlca.org/download/).  
-   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).  
+   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from the [Website](https://data-donnees.az.ec.gc.ca/data/climate/framework/fuel-life-cycle-assessment-model/English/1-Fuel%20LCA%20Model/Fuel%20LCA%20Model%20(latest%20version)/Fuel%20LCA%20Model%20database?lang=en).  
    - Import the dataset into openLCA.  
 
 2. **Setting up the overall fuel pathway information (optional)**  
@@ -54,7 +54,10 @@ Follow the steps below to build and calculate the carbon intensity (CI) of conve
    - An example result file is here: 'Conventional Bioethanol Example_openLCA_Nov2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).  
 
 **Reference materials**:
-- [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4) - An official guidance document to help users correctly apply the Fuel LCA Model.
+- [Fuel Life Cycle Assessment Model Website](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model.html)  
+  – The official website of the Fuel LCA Model, where can access the Fuel LCA Model Database, Methodology, and User Manual.
+- [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4)  
+  – An official guidance document to help users correctly apply the Fuel LCA Model.
 
 ---
 
