@@ -10,11 +10,11 @@ The Government of Canada’s Fuel Life Cycle Assessment (LCA) Model is a tool th
 
 ## 📺 Step 1: Introductory Videos on openLCA  
 
-Before starting the case study, watch the following videos to become familiar with how the **Government of Canada’s Fuel LCA Model** is implemented in **openLCA**:  
+Before starting the case study, watch the following videos to become familiar with how the **Government of Canada’s Fuel LCA Model** and its implementation in **openLCA**:  
 
-- [**Part 1: Walkthrough of the Model in openLCA**](https://www.youtube.com/watch?v=pamF7GONNXk) **[34.26 min]**. This video provides an overview of the Fuel LCA Model and demonstrates its structure and workflow in the openLCA software.
+- [**Video 1: Walkthrough of the Model in openLCA**](https://www.youtube.com/watch?v=pamF7GONNXk) **[Required - 34.26 min]**. This video provides an overview of the Fuel LCA Model and demonstrates its structure and workflow in the openLCA software.
 
-- [**Part 2: Demonstration of a Carbon Intensity Calculation**](https://www.youtube.com/watch?v=pnod3YNYrro) **[54.13 min]**. This video walks through the process of calculating the carbon intensity (CI) of fuels using the Fuel LCA Model in openLCA.
+- [**Video 2: Demonstration of a Carbon Intensity Calculation (optional)**](https://www.youtube.com/watch?v=pnod3YNYrro) **[Optional - 54.13 min]**. This video walks through the process of calculating the carbon intensity (CI) of fuels using the Fuel LCA Model in openLCA. 
 
 ---
 
@@ -23,10 +23,10 @@ Before starting the case study, watch the following videos to become familiar wi
 Follow the steps below to build and calculate the carbon intensity (CI) of conventional bioethanol using the Fuel LCA Model in openLCA. 
 
 1. **Download and Set Up openLCA**  
-   - Install openLCA (v2.0 or higher) from [openLCA.org(https://www.openlca.org/download/).  
-   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from the [Website](https://data-donnees.az.ec.gc.ca/data/climate/framework/fuel-life-cycle-assessment-model/English/1-Fuel%20LCA%20Model/Fuel%20LCA%20Model%20(latest%20version)/Fuel%20LCA%20Model%20database?lang=en).
-   - Create an empty database.
-   - Import the downloaded dataset into openLCA.  
+   - Install openLCA (v2.0 or higher) from openLCA.org(https://www.openlca.org/download/). → *Video 1 (5:44-7:25)*
+   - Download the 'Fuel_LCA_Model_Database_August2024.zip' from the [Website](https://data-donnees.az.ec.gc.ca/data/climate/framework/fuel-life-cycle-assessment-model/English/1-Fuel%20LCA%20Model/Fuel%20LCA%20Model%20(latest%20version)/Fuel%20LCA%20Model%20database?lang=en) 
+   - Create a new(empty) database. → *Video 1 (8:04-9:16)*
+   - Import the Fuel LCA Model database (JSON-LD) into openLCA. → *Video 1 (9:16-12:29)*  
 
 2. **Setting up the overall fuel pathway information (optional)**  
    - Follow the guidance of the [tutorial slides](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/02%20-%20CFR%20-%20CI%20Calculation%20Training_Conventional%20Bioethanol%20Example_Nov2024.pdf) to complete the [CFR data worksheet](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Conventional%20Bioethanol%20Example_CFR%20Data%20Workbook_Nov2024.xlsx).  
