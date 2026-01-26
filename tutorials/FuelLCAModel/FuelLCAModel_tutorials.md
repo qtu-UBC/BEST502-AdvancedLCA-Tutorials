@@ -23,7 +23,7 @@ Follow the steps below to build the conventional bioethanol model and calculate 
 
 **Tutorial materials:**
 - [Tutorial slides](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/02%20-%20CFR%20-%20CI%20Calculation%20Training_Conventional%20Bioethanol%20Example_Nov2024.pdf)
-- [CFR data worksheet](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Conventional%20Bioethanol%20Example_CFR%20Data%20Workbook_Nov2024.xlsx)
+- [CFR data worksheet (bioethanol scenario)](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Conventional%20Bioethanol%20Example_CFR%20Data%20Workbook_Nov2024.xlsx)
 
 1. **Download and Set Up openLCA**  
    - Install openLCA (v2.0 or higher) from openLCA.org(https://www.openlca.org/download/). → *Video 1 (5:44-7:25)*
@@ -32,7 +32,7 @@ Follow the steps below to build the conventional bioethanol model and calculate 
    - Import the Fuel LCA Model database (JSON-LD) into openLCA. → *Video 1 (9:16-12:29)*  
 
 2. **Setting up the overall fuel pathway information (optional)**  
-   - Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*.  
+   - Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*. The raw CFR data worksheet can be downloaded here: [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Current%20Version?lang=en).   
    - Provide high-level details such as the identification of the fuel production facility, description of the fuel pathway, the type of fuel(s) produced (e.g., bioethanol), and the reporting period.  
 
 3. **LCA modeling**  
