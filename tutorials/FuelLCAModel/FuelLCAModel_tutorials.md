@@ -55,7 +55,10 @@ Follow the steps below to build the conventional bioethanol model and calculate 
 
 7. **Export the Fuel Pathway**  
    - Export the completed fuel pathway (JSON-LD format) - Slides p. 62.
-   - An example result file is here: 'Conventional Bioethanol Example_openLCA_Nov2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).  
+   - An example result file is here: 'Conventional Bioethanol Example_openLCA_Nov2024.zip' from [database](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/tree/main/tutorials/FuelLCAModel/database).
+   
+8. **Answer the tutorial assignment questions**  
+   - File: [Fuel LCA Model Questions](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/FuelLCAModel/Fuel%20LCA%20model%20questions.docx). 
 
 **Reference materials**:
 - [Fuel Life Cycle Assessment Model Website](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model.html)  
