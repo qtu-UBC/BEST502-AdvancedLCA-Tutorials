@@ -31,8 +31,8 @@ Follow the steps below to build the conventional bioethanol model and calculate 
    - Create a new(empty) database. → *Video 1 (8:04-9:16)*
    - Import the Fuel LCA Model database (JSON-LD) into openLCA. → *Video 1 (9:16-12:29)*  
 
-2. **Setting up the overall fuel pathway information (optional)**  
-   - Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*. The raw CFR data worksheet can be downloaded here: [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Current%20Version?lang=en).   
+2. **Setting up the overall fuel pathway information** (optional if use the "CFR data worksheet (bioethanol scenario)" downloaded from "Tutorial materials" section) 
+   - The **purpose** of this step is to quantify the flow amounts (e.g., feedstock consumption, transportation distances, and product outputs), which serve as foreground inventory data for subsequent LCA modeling in openLCA. Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*. The raw CFR data worksheet can be downloaded here: [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Current%20Version?lang=en).
    - Provide high-level details such as the identification of the fuel production facility, description of the fuel pathway, the type of fuel(s) produced (e.g., bioethanol), and the reporting period.  
 
 3. **LCA modeling**  
