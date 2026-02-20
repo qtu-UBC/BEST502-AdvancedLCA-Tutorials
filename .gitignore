@@ -1,0 +1,91 @@
+# ============================
+# Jupyter / IPython
+# ============================
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+.ipython/
+.profile_default/
+
+# JupyterLab workspaces (can create noisy diffs)
+.jupyter/lab/workspaces/
+.jupyter/lab/user-settings/
+
+# ============================
+# Python caches / tooling
+# ============================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ============================
+# Environments (students should NOT pull these)
+# ============================
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda-env/
+*conda-env*/
+bw25/
+bw_env/
+
+# ============================
+# VS Code (keep repo clean)
+# ============================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ============================
+# OS junk
+# ============================
+.DS_Store
+Thumbs.db
+
+# ============================
+# Logs / temp
+# ============================
+*.log
+*.tmp
+*.swp
+*.swo
+
+# ============================
+# Student outputs (recommended convention)
+# ============================
+outputs/
+results/
+figures/
+plots/
+downloads/
+
+# ============================
+# Data (typical teaching pattern)
+# Keep a README and/or a tiny starter dataset folder; ignore everything else.
+# ============================
+data/**
+!data/README.md
+!data/starter/**
+!data/starter/**/*
+# (Remove the starter lines if you don't use that folder)
+
+# ============================
+# Brightway-specific local state (highly recommended to ignore)
+# Students will create local BW projects/databases; do NOT version these.
+# ============================
+brightway-projects/
+bw2data/
+.brightway*/
+*.sqlite
+*.db
+*.hdf5
+*.zip
