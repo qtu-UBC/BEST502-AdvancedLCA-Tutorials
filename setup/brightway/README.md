@@ -9,7 +9,7 @@ This repository supports learning how to perform Life Cycle Assessment (LCA) usi
 ### ✅ If you're using **UBC Jupyter Open**
 Use the **Brightway setup notebook** to install packages and register the kernel:
 
-▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=[https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials&branch=main&subPath=setup/brightway/brightway_setup.ipynb](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/setup/brightway/brightway_setup_py311.ipynb))
+▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/setup/brightway/brightway_setup_py311.ipynb)
 
 This will:
 - Install `brightway25`, `bw2io`, and related packages using pip
