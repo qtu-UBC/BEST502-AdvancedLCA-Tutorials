@@ -16,8 +16,25 @@ This will:
 - Let you run future notebooks with this kernel
 
 ---
+## 🧪 If you're setting up **locally**
+### Step 1: Install Anaconda (Required)
 
-### 🧪 If you're setting up **locally**
+Installation of the Brightway environment depends on **Anaconda (or Miniconda)**  
+(https://www.anaconda.com/products/individual), which are Python distribution platforms that include Conda package management.
+
+1. Download **Anaconda Individual Edition** from:  
+   https://www.anaconda.com/products/individual  
+
+2. Follow the installation instructions for your operating system (Windows, macOS, or Linux).
+
+3. Once Anaconda is installed, open:
+
+   - **Windows:** “Anaconda Prompt”
+   - **macOS/Linux:** Terminal
+
+---
+
+### Step 2: Create the Brightway Environment
 Use the Conda environment file located at:
 
 ```bash
@@ -36,6 +53,7 @@ Then register the kernel:
 mamba activate brightway25
 python -m ipykernel install --user --name brightway25 --display-name "Brightway 2.5"
 ```
+
 
 ---
 
