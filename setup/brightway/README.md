@@ -35,6 +35,11 @@ Installation of the Brightway environment depends on **Anaconda (or Miniconda)**
 ---
 
 ### Step 2: Create the Brightway Environment
+Install mamba (a faster drop-in replacement for conda)
+```bash
+conda install -n base -c conda-forge mamba
+```
+
 Use the Conda environment file located at:
 
 ```bash
