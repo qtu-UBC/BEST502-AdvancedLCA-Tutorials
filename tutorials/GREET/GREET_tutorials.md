@@ -31,6 +31,6 @@ The **GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologi
 ## 📝 Case Study:
 The GREET model provides two options: GREET .NET, which offers a graphical and user-friendly interface for exploring and analyzing complex energy and fuel pathways, and GREET Excel, a spreadsheet-based version that allows users to view and modify explicit formulas within the sheets. This tutorial will use **GREET Excel** for demonstration.
 
-Download the **GREET tutorial - BEST 502** and follow the step-by -step instructions to complete the tutorial. 
+Download the [**GREET tutorial - BEST 502**](https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials/blob/main/tutorials/GREET/GREET%20tutorial%20-%20BEST%20502.pdf) and follow the step-by -step instructions to complete the tutorial. 
 
 If you’re interested in how the GREET model calculates energy consumption and GHG emissions, you can access the GREET YouTube Tutorial using the link shown above.

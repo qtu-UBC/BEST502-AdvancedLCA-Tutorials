@@ -7,9 +7,8 @@ This repository supports learning how to perform Life Cycle Assessment (LCA) usi
 ## 🚀 Setup Instructions
 
 ### ✅ If you're using **UBC Jupyter Open**
-Use the **Brightway setup notebook** to install packages and register the kernel:
-
-▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials&branch=main&subPath=setup/brightway/brightway_setup.ipynb)
+Use the **Brightway setup notebook** to install packages and register the kernel: <br>
+▶️ [Click here to launch the setup notebook in Jupyter Open](https://open.jupyter.ubc.ca/jupyter/user-redirect/git-pull?repo=https://github.com/qtu-UBC/BEST502-AdvancedLCA-Tutorials&branch=main&subPath=setup/brightway/brightway_setup_py311_persistent.ipynb)
 
 This will:
 - Install `brightway25`, `bw2io`, and related packages using pip
@@ -17,8 +16,30 @@ This will:
 - Let you run future notebooks with this kernel
 
 ---
+## 🧪 If you're setting up **locally**
+### Step 1: Install Anaconda (Required)
 
-### 🧪 If you're setting up **locally**
+Installation of the Brightway environment depends on **Anaconda (or Miniconda)**  
+(https://www.anaconda.com/products/individual), which are Python distribution platforms that include Conda package management.
+
+1. Download **Anaconda Individual Edition** from:  
+   https://www.anaconda.com/products/individual  
+
+2. Follow the installation instructions for your operating system (Windows, macOS, or Linux).
+
+3. Once Anaconda is installed, open:
+
+   - **Windows:** “Anaconda Prompt”
+   - **macOS/Linux:** Terminal
+
+---
+
+### Step 2: Create the Brightway Environment
+Install mamba (a faster drop-in replacement for conda)
+```bash
+conda install -n base -c conda-forge mamba
+```
+
 Use the Conda environment file located at:
 
 ```bash
@@ -37,6 +58,7 @@ Then register the kernel:
 mamba activate brightway25
 python -m ipykernel install --user --name brightway25 --display-name "Brightway 2.5"
 ```
+
 
 ---
 
