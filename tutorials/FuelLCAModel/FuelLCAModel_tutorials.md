@@ -65,7 +65,8 @@ Follow the steps below to build the conventional bioethanol model and calculate 
   – The official website of the Fuel LCA Model, where can access the Fuel LCA Model Database, Methodology, and User Manual.
 - [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4)  
   – An official guidance document to help users correctly apply the Fuel LCA Model.
-
+- [Canada Clean Fuel Regulations](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/energy-production/fuel-regulations/clean-fuel-regulations.html)  
+  – Clean Fuel Regulations websites explaining what they are and how they work.
 ---
 
 ## 🎯 Learning Outcomes
