@@ -32,7 +32,7 @@ Follow the steps below to build the conventional bioethanol model and calculate 
    - Import the Fuel LCA Model database (JSON-LD) into openLCA. → *Video 1 (9:16-12:29)*  
 
 2. **Setting up the overall fuel pathway information** (optional if use the "CFR data worksheet (bioethanol scenario)" downloaded from "Tutorial materials" section) 
-   - The **purpose** of this step is to quantify the flow amounts (e.g., feedstock consumption, transportation distances, and product outputs), which serve as foreground inventory data for subsequent LCA modeling in openLCA. Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*. The raw CFR data worksheet can be downloaded here: [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Current%20Version?lang=en).
+   - The **purpose** of this step is to quantify the flow amounts (e.g., feedstock consumption, transportation distances, and product outputs), which serve as foreground inventory data for subsequent LCA modeling in openLCA. Follow the guidance of the *'tutorial slides'* to complete the *'CFR data worksheet'*. The **raw CFR data worksheet** can be downloaded here: [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Current%20Version?lang=en). The **detailed data entry methods** refer to the 'Specifications for Fuel LCA Model CI Calculations': [Link](https://data-donnees.az.ec.gc.ca/data/regulatee/climateoutreach/carbon-intensity-calculations-for-the-clean-fuel-regulations/en/Pre-publications/4.1%20Pre-publication?lang=en).
    - Provide high-level details such as the identification of the fuel production facility, description of the fuel pathway, the type of fuel(s) produced (e.g., bioethanol), and the reporting period.  
 
 3. **LCA modeling**  
@@ -65,7 +65,8 @@ Follow the steps below to build the conventional bioethanol model and calculate 
   – The official website of the Fuel LCA Model, where can access the Fuel LCA Model Database, Methodology, and User Manual.
 - [Fuel Life Cycle Assessment Model User Manual](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/fuel-life-cycle-assessment-model/user-manual.html#toc4)  
   – An official guidance document to help users correctly apply the Fuel LCA Model.
-
+- [Canada Clean Fuel Regulations](https://www.canada.ca/en/environment-climate-change/services/managing-pollution/energy-production/fuel-regulations/clean-fuel-regulations.html)  
+  – Clean Fuel Regulations websites explaining what they are and how they work.
 ---
 
 ## 🎯 Learning Outcomes
